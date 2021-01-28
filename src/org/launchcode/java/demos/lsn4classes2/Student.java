@@ -70,7 +70,7 @@ public class Student {
     //  Student objects equal.
    public boolean equals(Object toBeCompared) {
        Student theStudent = (Student) toBeCompared;
-       return theStudent.getStudentId() == getStudentId();
+       return theStudent.getName() == getName();
    }
 
     public String getName() {
@@ -116,7 +116,9 @@ public class Student {
         sally.addGrade(98, 3.8);
         System.out.println(nextStudentId + ". "+sally.studentInfo());
         System.out.println(nextStudentId + ". "+sally.toString());
-        Student bono1 = new Student("Paul David Henson", 4);
+
+        System.out.println("******* Student comparison by their properties *******");
+        Student bono1 = new Student("Bono", 3);
         Student bono2 = new Student("Bono", 4);
         System.out.println(bono1.equals(bono2));
     }
