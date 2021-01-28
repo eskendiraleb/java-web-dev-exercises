@@ -66,10 +66,13 @@ public class Student {
         return name + " (Credits: " + numberOfCredits + ", GPA: " + gpa + ")";
     }
 
-
-
-    // TODO: Add your custom 'equals' method here. Consider which fields should match in order to call two
+   // TODO: Add your custom 'equals' method here. Consider which fields should match in order to call two
     //  Student objects equal.
+   public boolean equals(Object toBeCompared) {
+       Student theStudent = (Student) toBeCompared;
+       return theStudent.getStudentId() == getStudentId();
+   }
+
     public String getName() {
         return name;
     }
@@ -113,5 +116,8 @@ public class Student {
         sally.addGrade(98, 3.8);
         System.out.println(nextStudentId + ". "+sally.studentInfo());
         System.out.println(nextStudentId + ". "+sally.toString());
+        Student bono1 = new Student("Paul David Henson", 4);
+        Student bono2 = new Student("Bono", 4);
+        System.out.println(bono1.equals(bono2));
     }
 }
